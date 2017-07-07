@@ -1,0 +1,18 @@
+<div class="container">
+    <form #numberForm="ngForm">
+       <div class="form-group">
+        <label for="id">Student ID</label>
+        <input type="text" class="form-control" id="id" 
+               required
+               [(ngModel)]="model.id" name="id" 
+               #id="ngModel" (focusout)="addcommaintextfiled(numberForm);"  (keypress)="chkNumber(event);" (focusin)="clear();"/>
+        <p id="idTxt" [(ngModel)]="model.idTxt" name="idTxt" >number on focus :{{addThousandSeparator(numberForm)}} </p>
+        <br>
+        <p>number on blur : {{removecomma(numberForm)}}</p>
+      </div>
+
+    </form>
+  
+
+  </div>
+
